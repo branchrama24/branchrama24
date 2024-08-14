@@ -1,0 +1,24 @@
+.result-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .result-container p {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  .result-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .result-container button:hover {
+    background-color: #0056b3;
+  }
+  
