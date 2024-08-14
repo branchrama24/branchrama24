@@ -15,7 +15,7 @@ const Hero = () => {
      <motion.div variants={textVariant()}
             className='flex-[1.75] bg-black-100 p-8 rounded-2xl'>
                 <p className={`${styles.sectionSubText} text-center`}>"Si puedes imaginarlo, puedes programarlo."</p>
-                <p className={`${styles.sectionSubText} text-center`}><a href={resume} download={"Resume"}>
+                <p className={`${styles.sectionSubText} text-center`}><a href={resume2} download={"Resume"}>
                 <br></br>
           <button
             type='submit'
@@ -25,7 +25,7 @@ const Hero = () => {
       <motion.div variants={textVariant()}
             className='flex-[1.75] bg-black-100 p-8 rounded-2xl'>
                 <p className={`${styles.sectionSubText} text-center`}>"If you can imagine it, you can program it"</p>
-                <p className={`${styles.sectionSubText} text-center`}><a href={resume2} download={"Resume"}>
+                <p className={`${styles.sectionSubText} text-center`}><a href={resume} download={"Resume"}>
                 <br></br>
           <button
             type='submit'

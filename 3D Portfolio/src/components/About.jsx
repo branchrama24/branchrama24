@@ -77,7 +77,7 @@ const About = () => {
           
         <span className='text-[#915EFF]'>Rama</span>
         </h2>
-        <p className={`${styles.sectionSubText} text-center`}>Soy un desarrollador Full Stack que se especializa en Next y Node.</p>
+        <p className={`${styles.sectionSubText} text-center`}>Mi objetivo siempre ha sido transformar desafíos complejos en soluciones prácticas y funcionales aprovechando la experiencia y el conocimiento colectivo. </p>
       </motion.div>
 
 

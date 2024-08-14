@@ -246,7 +246,7 @@ const projects = [
     ],
     image: portfolio,
     source_code_link2: "https://thanatosrama4.netlify.app/#about",
-    source_code_link: "https://github.com/rama42111869/React-Stuff",
+    source_code_link: "https://github.com/branchrama24/branchrama24",
   },
   {
     name: "Quiz-app",
@@ -263,7 +263,7 @@ const projects = [
       },
     ],
     image: quiz,
-    source_code_link: "https://github.com/rama42111869/React-Stuff/tree/main/Quiz-app",
+    source_code_link: "https://github.com/branchrama24/branchrama24",
     source_code_link2: "https://quizapption.netlify.app/",
   },
   {
@@ -281,7 +281,7 @@ const projects = [
       },
     ],
     image: memorama,
-    source_code_link:"https://github.com/rama42111869/React-Stuff/tree/main/Juego-de-Memoria-React-main",
+    source_code_link:"https://github.com/branchrama24/branchrama24",
     source_code_link2: "https://memoramaapp.netlify.app/",
   },
   {
@@ -299,7 +299,7 @@ const projects = [
       },
     ],
     image: sheldon,
-    source_code_link:"https://github.com/rama42111869/React-Stuff/tree/main/jankenpo%20-%20sheldon",
+    source_code_link:"https://github.com/branchrama24/branchrama24",
     source_code_link2: "https://jankenpo-sheldon.netlify.app/",
   },
   {
@@ -321,8 +321,8 @@ const projects = [
       },
     ],
     image: tripguide,
-    source_code_link2:"https://github.com/rama42111869/React-Stuff/tree/main/tetris-react-main",
-    source_code_link: "https://github.com/rama42111869/React-Stuff/tree/main/tetris-react-main",
+    source_code_link2:"https://github.com/branchrama24/branchrama24",
+    source_code_link: "https://github.com/branchrama24/branchrama24",
   },
   {
     name: "Clon de figma",
@@ -347,8 +347,8 @@ const projects = [
       },
     ],
     image: copyfigma,
-    source_code_link2:"https://github.com/rama42111869/React-Stuff/tree/main/figma_clone-main",
-    source_code_link: "https://github.com/rama42111869/React-Stuff/tree/main/figma_clone-main",
+    source_code_link2:"https://github.com/branchrama24/branchrama24",
+    source_code_link: "https://github.com/branchrama24/branchrama24",
   },
 
   {
@@ -370,7 +370,7 @@ const projects = [
       },
     ],
     image: catalogo,
-    source_code_link: "https://github.com/rama42111869/React-Stuff/tree/main/Game%20listing",
+    source_code_link: "https://github.com/branchrama24/branchrama24",
     source_code_link2: "https://catalogojuegos.netlify.app",
   },  {
     name: "Clon del calendario de google",
@@ -392,7 +392,7 @@ const projects = [
     ],
     image: calendario,
     source_code_link: "https://gcloncalendar.netlify.app",
-    source_code_link2: "https://github.com/rama42111869/React-Stuff/tree/main/Game%20listing",
+    source_code_link2: "https://github.com/branchrama24/branchrama24",
   },
   {
     name: "P3R",
@@ -413,7 +413,7 @@ const projects = [
       },
     ],
     image: persona,
-    source_code_link:"https://github.com/rama42111869/React-Stuff/tree/main/Vusic-main",
+    source_code_link:"https://github.com/branchrama24/branchrama24",
     source_code_link2: "https://p3rtyfy.netlify.app",
   },
   {
