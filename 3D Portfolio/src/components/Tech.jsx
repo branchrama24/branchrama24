@@ -1,71 +1,61 @@
-import React, { useRef, useState  } from "react";
+import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import { slideIn, fadeIn } from "../utils/motion";
 import { technologies } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
-  index,
-  name,
-  icon,
-}) => {
+const ProjectCard = ({ index, name, icon }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring",  index * 0.0000, 0.00)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.2, 0.75)}>
       <Tilt
         options={{
-          max: 45,
-          scale: 1,
-          speed: 150,
+          max: 35,
+          scale: 1.05,
+          speed: 300,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[126px] w-full'
+        className='bg-gradient-to-r from-[#3b3054] to-[#120078] p-4 rounded-2xl sm:w-[126px] w-full shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out'
       >
         <div className='relative w-full h-[75px]'>
           <img
             src={icon}
-            alt='project_image'
+            alt={`${name}_icon`}
             className='w-full h-full object-cover rounded-3xl'
           />
         </div>
 
-        <div className='mt-0'>
-          <h3 className='text-[#915EFF] text-center font-bold text-[12px]'>{name}</h3>
+        <div className='mt-4'>
+          <h3 className='text-[#F6FA70] text-center font-bold text-[14px]'>
+            {name}
+          </h3>
         </div>
       </Tilt>
     </motion.div>
   );
 };
 
-
 export const Tech = () => {
   return (
     <div>
       <motion.div
-        variants={slideIn("center", "tween",0.0000, 0.00)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        variants={slideIn("center", "tween", 0.2, 0.75)}
+        className='bg-gradient-to-r from-[#3b3054] to-[#120078] p-8 rounded-2xl shadow-lg'
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-        <span className='text-[#915EFF]'>Tecnologias</span>
+        <h2 className={`${styles.sectionHeadText} text-center text-white`}>
+          <motion.span whileHover={{ scale: 1.1 }} className='text-[#F6FA70]'>
+            Tecnologías
+          </motion.span>
         </h2>
-        </motion.div>
-        <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-1 text-secondary text-[15px] max-w-3xl leading-[30px]'
-        >
-        </motion.p>
-      </div>
+      </motion.div>
 
-      <div className='mt-5 flex  flex-wrap justify-center gap-8'>
-        {technologies.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+      <div className='mt-10 flex flex-wrap justify-center gap-8'>
+        {technologies.map((tech, index) => (
+          <ProjectCard key={`tech-${index}`} index={index} {...tech} />
         ))}
       </div>
-    </div>    
+    </div>
   );
-}
+};
 
 export default SectionWrapper(Tech, "tech");

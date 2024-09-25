@@ -25,6 +25,8 @@ import csharp from "./tech/csharp.png";
 import springboot from "./tech/springboot.png";
 import aspnet from "./tech/aspnet.png";
 import sql from "./tech/sql.webp";
+import angular from "./tech/angular.png";
+import vue from "./tech/vue.png"
 import mysql from "./tech/mysql.webp";
 import nosql from "./tech/nosql.webp";
 import calendario from "./calendar.webp";
@@ -110,6 +112,8 @@ export {
   calendario,
   persona,
   react,
-  pasosfirmes
+  pasosfirmes,
+  angular,
+  vue,
 };
 

@@ -1,3 +1,4 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import {
   mobile,
   backend,
@@ -47,12 +48,22 @@ import {
   persona,
   react,
   pasosfirmes,
+  angular,
+  vue,
 } from "../assets";
 
 export const navLinks = [
     {
     id: "about",
     title: "Sobre mi",
+  },
+  {
+    id: "work",
+    title: "Trabajos",
+  },
+  {
+    id: "proyectos",
+    title: "Proyectos",
   },
   {
     id: "metodologias",
@@ -63,16 +74,8 @@ export const navLinks = [
     title: "Patrones",
   },
   {
-    id: "work",
-    title: "Trabajo",
-  },
-  {
     id: "tech",
     title: "Tecnologias",
-  },
-  {
-    id: "proyectos",
-    title: "Proyectos",
   },
   {
     id: "contact",
@@ -121,15 +124,19 @@ const technologies = [
     icon: typescript,
   },
   {
-    name: "REACT JS",
+    name:"ANGULAR",
+    icon: angular,
+  },
+  {
+    name: "REACT",
     icon: reactjs,
   },
   {
-    name: "REACT NATIVE",
-    icon: reactjs,
+    name: "VUE",
+    icon: vue,
   },
   {
-    name: "TAILWIND CSS",
+    name: "TAILWIND",
     icon: tailwind,
   },
   {
@@ -159,6 +166,16 @@ const technologies = [
 ];
 
 const experiences = [
+  {
+    title: "Desarrollador Frontend",
+    company_name: "Freelancer",
+    icon: creator,
+    iconBg: "#383E56",
+    date: "Agosto 2024 - Septiembre 2024",
+    points: [
+      "Trabajo individual que consistio en arreglar componentes de un sistema de gestion burocrata.",
+    ],
+  },
   {
     title: "Desarrollador Frontend",
     company_name: "No-Country",
@@ -231,7 +248,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Portafolio",
+    name: "Portfolio",
     description:
       "Bienvenido/a a mi página personal. Aquí encontrarás una recopilación de mis proyectos, trabajos y un poco sobre mí.",
     tags: [
@@ -245,7 +262,7 @@ const projects = [
       },
     ],
     image: portfolio,
-    source_code_link2: "https://thanatosrama4.netlify.app/#about",
+    source_code_link2: "https://thanatosrama5.netlify.app/#about",
     source_code_link: "https://github.com/branchrama24/branchrama24",
   },
   {
@@ -391,8 +408,8 @@ const projects = [
       },
     ],
     image: calendario,
-    source_code_link: "https://gcloncalendar.netlify.app",
-    source_code_link2: "https://github.com/branchrama24/branchrama24",
+    source_code_link: "https://github.com/branchrama24/branchrama24",
+    source_code_link2: "https://gcloncalendar.netlify.app",
   },
   {
     name: "P3R",
@@ -415,28 +432,6 @@ const projects = [
     image: persona,
     source_code_link:"https://github.com/branchrama24/branchrama24",
     source_code_link2: "https://p3rtyfy.netlify.app",
-  },
-  {
-    name: "Pasos Firmes",
-    description:
-      "Trabajo grupal que consistio en desarrollar en un Banco de ortesis llamado Pasos Firmes, el cual tiene la finalidad de ayudar a la gente a traves de donaciones.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Spring Boot",
-        color: "green-text-gradient",
-      },
-    ],
-    image: pasosfirmes,
-    source_code_link:"https://github.com/No-Country-simulation/s16-06-m-java-react",
-    source_code_link2: "https://upbeat-commitment-production.up.railway.app/swagger-ui/index.html",
   },
 ];
 

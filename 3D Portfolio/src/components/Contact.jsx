@@ -3,13 +3,8 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-
-//0zCA4MDe5eLyKCUDU
-//template_mo7dm1i
-//service_gi247f6
 
 const Contact = () => {
   const formRef = useRef();
@@ -20,11 +15,11 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false); // Nuevo estado para el modal
+  const [modalMessage, setModalMessage] = useState(""); // Mensaje del modal
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
+    const { name, value } = e.target;
     setForm({
       ...form,
       [name]: value,
@@ -33,26 +28,36 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validar que los campos no estén vacíos antes de enviar
+    if (!form.name || !form.email || !form.message) {
+      setModalMessage("Por favor complete todos los campos antes de enviar.");
+      setShowModal(true);
+      return;
+    }
+
     setLoading(true);
 
     emailjs
       .send(
-        'service_gi247f6',
-        'template_mo7dm1i',
+        'service_gi247f6', // ID del servicio en EmailJS
+        'template_mo7dm1i', // ID de la plantilla en EmailJS
         {
-          from_name: form.name,
-          to_name: "Rama",
-          from_email: form.email,
-          to_email: "ramagonzalez397@gmail.com",
-          message: form.message,
+          from_name: form.name, // Nombre del remitente
+          from_email: form.email, // Correo del remitente
+          to_name: "Rama", // Nombre del destinatario
+          to_email: "ramagonzalez397@gmail.com", // Correo del destinatario
+          message: form.message, // Mensaje del remitente
         },
-        '0zCA4MDe5eLyKCUDU'
+        '0zCA4MDe5eLyKCUDU' // Llave pública
       )
       .then(
         () => {
           setLoading(false);
-          alert("Gracias por enviar. Nos comunicaremos pronto");
+          setModalMessage("Gracias por enviar. Nos comunicaremos pronto.");
+          setShowModal(true);
 
+          // Resetear el formulario después de enviar
           setForm({
             name: "",
             email: "",
@@ -62,69 +67,82 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-
-          alert("Ahh, sucedio algo inesperado. Intente otra vz por favor");
+          setModalMessage("Ahh, sucedió algo inesperado. Intente otra vez por favor.");
+          setShowModal(true);
         }
       );
   };
 
   return (
-    <div
-    >
-      <motion.div
-        variants={slideIn("center", "tween", 0.0005, 0.50)}
-        className='text-[#915EFF] flex-[0.50] bg-black-100 p-8 rounded-2xl'
-      >
-        <h3 className={'text-[#915EFF]'+styles.sectionHeadText}>Contacto</h3>
+    <div>
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <p className="text-center text-[#915EFF] font-bold">{modalMessage}</p>
+            <button
+              onClick={() => setShowModal(false)}
+              className="mt-4 bg-[#915EFF] hover:bg-[#7a47e1] py-2 px-4 rounded-lg text-white font-semibold"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className='mt-2 flex flex-col gap-2'
-        >
-          <label className='flex flex-col'>
-            <span className='text-[#915EFF] font-medium mb-4'></span>
+      <motion.div
+        variants={slideIn("center", "tween", 0.05, 0.5)}
+        className="bg-gradient-to-r from-[#1d1836] to-[#3b3054] p-8 rounded-2xl shadow-lg"
+      >
+        <h2 className={`${styles.sectionHeadText} text-center text-white`}>
+          <span className="text-[#F6FA70]">Contacto</span>
+        </h2>
+
+        <form ref={formRef} onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-2">Nombre</span>
             <input
-              type='text'
-              name='name'
+              type="text"
+              name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Nombre"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-[#915EFF] rounded-lg outline-none border-none font-medium'
+              placeholder="Tu nombre"
+              className="bg-gray-800 py-4 px-6 placeholder:text-gray-500 text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
-          <label className='flex flex-col'>
-            <span className='text-[#915EFF] font-medium mb-4'></span>
+
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-2">Correo Electrónico</span>
             <input
-              type='email'
-              name='email'
+              type="email"
+              name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Mail"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-[#915EFF] rounded-lg outline-none border-none font-medium'
+              placeholder="Tu correo"
+              className="bg-gray-800 py-4 px-6 placeholder:text-gray-500 text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
-          <label className='flex flex-col'>
-            <span className='text-[#915EFF] font-medium mb-4'></span>
+
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-2">Mensaje</span>
             <textarea
               rows={7}
-              name='message'
+              name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder='Su nombre y su mail quedan en anonimato. Por favor envie su mensaje con los datos correspondientes. Tanto Mail como asunto con el fin de entablar una conversacion.'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-[#915EFF] rounded-lg outline-none border-none font-medium'
+              placeholder="Escribe tu mensaje aquí..."
+              className="bg-gray-800 py-4 px-6 placeholder:text-gray-500 text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
-          <span className='text-[#915EFF] font-medium mb-4'></span>
+
           <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-[#915EFF] font-bold shadow-md shadow-primary'
+            type="submit"
+            className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md hover:bg-[#7a47e1] transition-all duration-300"
           >
             {loading ? "Enviando..." : "Enviar"}
           </button>
         </form>
       </motion.div>
-
     </div>
   );
 };

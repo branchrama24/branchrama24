@@ -12,7 +12,6 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -20,11 +19,11 @@ const ExperienceCard = ({ experience }) => {
         background: "#1d1836",
         color: "white",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className=' flex justify-center items-center w-full h-full'>
+        <div className='flex justify-center items-center w-full h-full'>
           <img
             src={experience.icon}
             alt={experience.company_name}
@@ -34,11 +33,10 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-[#915EFF] text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className=' text-white text-[16px] font-bold'
-          style={{ margin: 0 }}
-        >
+        <h3 className='text-[#F6FA70] text-[24px] font-bold'>
+          {experience.title}
+        </h3>
+        <p className='text-white text-[16px] font-bold' style={{ margin: 0 }}>
           {experience.company_name}
         </p>
       </div>
@@ -60,14 +58,21 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}
-            className='flex-[0.00] bg-black-100 p-8 rounded-2xl'>
-        <h2 className={`${styles.sectionHeadText} text-center `}>
-        <span className='text-[#915EFF]'>Experiencia</span>
+      <motion.div
+        variants={textVariant()}
+        className='bg-gradient-to-r from-[#3b3054] to-[#120078] p-8 rounded-2xl shadow-lg'
+      >
+        <h2 className={`${styles.sectionHeadText} text-center text-white`}>
+          <motion.span
+            whileHover={{ scale: 1.1 }}
+            className='text-[#F6FA70]'
+          >
+           Trabajos
+          </motion.span>
         </h2>
       </motion.div>
 
-      <div className=' mt-0 flex flex-col'>
+      <div className='mt-10 flex flex-col'>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
