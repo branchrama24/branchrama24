@@ -22,7 +22,10 @@ const About = () => {
       <p className={`${styles.sectionSubText} text-center text-white mt-4`}>
         Desarrollador enfocado en <span className="text-[#F6FA70]">convertir ideas en soluciones</span> prácticas, combinando creatividad y tecnología para crear experiencias digitales <span className="underline decoration-[#F6FA70]">impactantes</span>.
       </p>
+
+        
     </motion.div>
+      
   );
 };
 
